@@ -23,7 +23,7 @@ const slice = (array, start, end) => {
     if (start < 0) {
         start = -start > length ? 0 : (length + start)
     }
-
+    end = end > length ? length : end
     if (end < 0) {
         end = -end > length ? length : (length + end)
     }
@@ -41,6 +41,5 @@ const slice = (array, start, end) => {
 
 }
 
-const arr = [1, 2, 3, 4]
-const result = slice(arr)
-console.log(result) 
+
+module.exports = slice
