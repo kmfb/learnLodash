@@ -33,6 +33,9 @@ const chunk = (array, size) => {
     }
 
     return result
-
 }
+
+const arr = [1, 3, 4, 5, 9]
+
+console.log(chunk(arr, 3))
 
