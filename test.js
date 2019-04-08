@@ -1,6 +1,20 @@
-function test(fo, ...last) {
-    console.log(fo, ...last)
-    console.log(last.length)
+function baseEach(collection, iteratee) {
+    if (collection == null) {
+      return collection
+    }
+    if (!isArrayLike(collection)) {
+      return baseForOwn(collection, iteratee)
+    }
+    const length = collection.length
+    const iterable = Object(collection)
+    let index = -1
+  
+    while (++index < length) {
+      if (iteratee(iterable[index], index, iterable) === false) {
+        break
+      }
+    }
+    return collection
 }
 
-test({a: '1'}, {b: '2'}, {c: '3'})
+console.log(typeof Object('123'))
